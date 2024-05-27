@@ -236,10 +236,10 @@ import {useRouter} from 'vue-router'
 import{useUserStore} from "@/stores/user.js";
 const router = useRouter();
 const login = async () => {
-  // const userStore = useUserStore();
-  // let result = await userLoginService(loginData.value)
-  // ElMessage.success(result.msg?result.msg:'登录成功')
-  // await userStore.getUserInfo({username:loginData.value.username,password:loginData.value.password });
+  const userStore = useUserStore();
+  let result = await userLoginService(loginData.value)
+  ElMessage.success(result.msg?result.msg:'登录成功')
+  await userStore.getUserInfo({username:loginData.value.username,password:loginData.value.password });
   router.push({path:'/home'})
 }
 
