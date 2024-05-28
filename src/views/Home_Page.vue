@@ -7,7 +7,7 @@ import {
   Crop,
   EditPen,
   SwitchButton,
-  CaretBottom
+  CaretBottom, Expand
 } from '@element-plus/icons-vue'
 
 </script>
@@ -23,15 +23,21 @@ import {
                router>
         <el-menu-item >
           <el-icon>
-            <Management />
+            <Promotion />
           </el-icon>
           <span>发送邮件</span>
         </el-menu-item>
         <el-menu-item >
           <el-icon>
-            <Promotion />
+            <Expand />
           </el-icon>
           <span>收件箱</span>
+        </el-menu-item>
+        <el-menu-item >
+          <el-icon>
+            <Management />
+          </el-icon>
+          <span>草稿箱</span>
         </el-menu-item>
         <el-sub-menu >
           <template #title>
@@ -40,23 +46,23 @@ import {
             </el-icon>
             <span>个人中心</span>
           </template>
-          <el-menu-item >
+          <el-menu-item index="/user/information">
             <el-icon>
               <User />
             </el-icon>
             <span>基本资料</span>
           </el-menu-item>
-          <el-menu-item >
+          <el-menu-item index="/user/send">
             <el-icon>
               <Crop />
             </el-icon>
-            <span>更换头像</span>
+            <span>已发送</span>
           </el-menu-item>
-          <el-menu-item >
+          <el-menu-item index="/user/icon">
             <el-icon>
               <EditPen />
             </el-icon>
-            <span>重置密码</span>
+            <span>更换头像</span>
           </el-menu-item>
         </el-sub-menu>
       </el-menu>
@@ -78,8 +84,8 @@ import {
           <template #dropdown>
             <el-dropdown-menu>
               <el-dropdown-item command="info" :icon="User">基本资料</el-dropdown-item>
-              <el-dropdown-item command="avatar" :icon="Crop">更换头像</el-dropdown-item>
-              <el-dropdown-item command="resetPassword" :icon="EditPen">重置密码</el-dropdown-item>
+              <el-dropdown-item command="avatar" :icon="Crop">已发送</el-dropdown-item>
+              <el-dropdown-item command="resetPassword" :icon="EditPen">更改头像</el-dropdown-item>
               <el-dropdown-item command="logout" :icon="SwitchButton">退出登录</el-dropdown-item>
             </el-dropdown-menu>
           </template>

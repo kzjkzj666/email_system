@@ -233,13 +233,16 @@ const register = async () => {
 import {userLoginService} from '@/api/user.js'
 import {ElMessage} from "element-plus";
 import {useRouter} from 'vue-router'
+import {useTokenStore} from "@/stores/token.js";
 import{useUserStore} from "@/stores/user.js";
 const router = useRouter();
 const login = async () => {
+  // const tokenStore = useTokenStore();
   // const userStore = useUserStore();
   // let result = await userLoginService(loginData.value)
   // ElMessage.success(result.msg?result.msg:'登录成功')
   // await userStore.getUserInfo({username:loginData.value.username,password:loginData.value.password });
+  // tokenStore.setToken(result.data.token);
   router.push({path:'/home'})
 }
 
